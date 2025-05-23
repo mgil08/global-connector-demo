@@ -1,0 +1,21 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Conector Global IA",
+  "name_for_model": "global_connector",
+  "description_for_human": "Conecta ChatGPT a cualquier SaaS que tenga este conector.",
+  "description_for_model": "Plugin dinámico para ejecutar llamadas genéricas a APIs configuradas.",
+  "auth": {
+    "type": "oauth",
+    "authorization_url": "https://TU-DOMINIO.COM/oauth/authorize",
+    "token_url": "https://TU-DOMINIO.COM/oauth/token",
+    "scopes": ["global.read", "global.write"]
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://TU-DOMINIO.COM/manifest",
+    "is_user_authenticated": true
+  },
+  "logo_url": "https://TU-DOMINIO.COM/logo.png",
+  "contact_email": "soporte@tudominio.com",
+  "legal_info_url": "https://tudominio.com/terms"
+}

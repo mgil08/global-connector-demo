@@ -1,0 +1,55 @@
+openapi: 3.0.1
+info:
+  title: Conector Global IA - HubSpot Demo
+  version: '1.0'
+servers:
+  - url: https://TU-DOMINIO.COM  # lo actualizaremos luego
+paths:
+  /crm/v3/objects/contacts:
+    get:
+      summary: Lista contactos de HubSpot
+      operationId: listContacts
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 10
+        - in: query
+          name: properties
+          schema:
+            type: string
+            example: firstname,lastname,email
+      responses:
+        '200':
+          description: Lista de contactos
+    post:
+      summary: Crear un nuevo contacto en HubSpot
+      operationId: createContact
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                properties:
+                  type: object
+                  additionalProperties:
+                    type: string
+      responses:
+        '201':
+          description: Contacto creado
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://app.hubspot.com/oauth/authorize
+          tokenUrl: https://api.hubapi.com/oauth/v1/token
+          scopes:
+            crm.objects.contacts.read: Leer contactos
+            crm.objects.contacts.write: Escribir contactos
+security:
+  - oauth2: [crm.objects.contacts.read, crm.objects.contacts.write]
