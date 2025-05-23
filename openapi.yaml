@@ -3,7 +3,7 @@ info:
   title: Conector Global IA - HubSpot Demo
   version: '1.0'
 servers:
-  - url: https://TU-DOMINIO.COM  # lo actualizaremos luego
+  - url: https://mgil08.github.io/global-connector-demo/openapi.yaml
 paths:
   /crm/v3/objects/contacts:
     get:
