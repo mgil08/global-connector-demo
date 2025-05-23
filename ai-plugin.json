@@ -12,7 +12,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://TU-DOMINIO.COM/manifest",
+    "url": "https://mgil08.github.io/global-connector-demo/ai-plugin.json",
     "is_user_authenticated": true
   },
   "logo_url": "https://TU-DOMINIO.COM/logo.png",
